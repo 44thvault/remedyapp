@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terra Materia — Ancestral Food Wisdom</title>
+<meta name="description" content="Explore traditional whole-food and plant-based supports historically used across cultures. Educational resource grounded in ancestral wisdom.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --bg-primary: #FAF7F2;
+  --bg-secondary: #F0EBE3;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FDFCFA;
+  --text-primary: #2C2C2C;
+  --text-secondary: #5A5A52;
+  --text-tertiary: #8A8A7E;
+  --accent-green: #5B7B5E;
+  --accent-green-light: #7A9E7D;
+  --accent-green-pale: #E8F0E8;
+  --accent-warm: #B8956A;
+  --accent-warm-light: #D4B896;
+  --accent-warm-pale: #F5EDE2;
+  --accent-sage: #94A894;
+  --border-light: #E5E0D8;
+  --border-medium: #D1C9BD;
+  --shadow-sm: 0 1px 3px rgba(44,44,44,0.04);
+  --shadow-md: 0 4px 16px rgba(44,44,44,0.06);
+  --shadow-lg: 0 8px 32px rgba(44,44,44,0.08);
+  --shadow-xl: 0 16px 48px rgba(44,44,44,0.1);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1A1A18;
+  --bg-secondary: #222220;
+  --bg-card: #2A2A27;
+  --bg-card-hover: #323230;
+  --text-primary: #E8E4DC;
+  --text-secondary: #B0ADA5;
+  --text-tertiary: #7A776F;
+  --accent-green: #7A9E7D;
+  --accent-green-light: #94B897;
+  --accent-green-pale: rgba(122,158,125,0.15);
+  --accent-warm: #D4B896;
+  --accent-warm-light: #E0C9A8;
+  --accent-warm-pale: rgba(184,149,106,0.15);
+  --accent-sage: #8A9E8A;
+  --border-light: #3A3A36;
+  --border-medium: #4A4A44;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.35);
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-body);
+  background:var(--bg-primary);
+  color:var(--text-primary);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background var(--transition-smooth),color var(--transition-smooth);
+  overflow-x:hidden;
+}
+
+/* ===== UTILITY ===== */
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* ===== HEADER ===== */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,247,242,0.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-light);
+  transition:background var(--transition-smooth),border-color var(--transition-smooth);
+}
+[data-theme="dark"] header{background:rgba(26,26,24,0.88)}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;max-width:1080px;margin:0 auto;
+}
+.logo{
+  font-family:var(--font-display);font-size:1.35rem;font-weight:400;
+  letter-spacing:0.02em;color:var(--text-primary);text-decoration:none;
+  transition:color var(--transition-fast);
+}
+.logo span{color:var(--accent-green);font-style:italic}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:40px;height:40px;border-radius:50%;border:none;
+  background:transparent;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-secondary);transition:all var(--transition-fast);
+}
+.icon-btn:hover{background:var(--bg-secondary);color:var(--text-primary)}
+.icon-btn svg{width:20px;height:20px}
+
+/* ===== HERO ===== */
+.hero{
+  padding:80px 24px 48px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,var(--accent-green-pale) 0%,transparent 70%);
+  opacity:0.5;pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 16px;border-radius:100px;
+  background:var(--accent-green-pale);color:var(--accent-green);
+  font-size:0.75rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;
+  margin-bottom:28px;
+  animation:fadeInUp 0.8s ease both;
+}
+.hero-badge svg{width:14px;height:14px}
+.hero h1{
+  font-family:var(--font-display);font-weight:300;
+  font-size:clamp(2.2rem,5.5vw,3.6rem);
+  line-height:1.15;color:var(--text-primary);
+  max-width:680px;margin:0 auto 20px;
+  animation:fadeInUp 0.8s 0.1s ease both;
+}
+.hero h1 em{font-style:italic;color:var(--accent-green)}
+.hero-sub{
+  font-size:clamp(0.95rem,2vw,1.1rem);
+  color:var(--text-secondary);max-width:520px;margin:0 auto 44px;
+  line-height:1.65;font-weight:300;
+  animation:fadeInUp 0.8s 0.2s ease both;
+}
+
+/* ===== SEARCH ===== */
+.search-section{
+  max-width:600px;margin:0 auto;
+  animation:fadeInUp 0.8s 0.3s ease both;
+}
+.search-wrapper{
+  position:relative;
+  background:var(--bg-card);
+  border:1.5px solid var(--border-light);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-md);
+  transition:all var(--transition-fast);
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.search-wrapper:focus-within{
+  border-color:var(--accent-green);
+  box-shadow:0 0 0 3px var(--accent-green-pale),var(--shadow-lg);
+}
+.search-icon{
+  position:absolute;left:20px;color:var(--text-tertiary);
+  pointer-events:none;transition:color var(--transition-fast);
+}
+.search-wrapper:focus-within .search-icon{color:var(--accent-green)}
+.search-icon svg{width:20px;height:20px}
+#searchInput{
+  flex:1;padding:18px 20px 18px 52px;
+  border:none;background:transparent;
+  font-family:var(--font-body);font-size:1rem;
+  color:var(--text-primary);outline:none;
+  transition:color var(--transition-smooth);
+}
+#searchInput::placeholder{color:var(--text-tertiary);font-weight:300}
+#searchBtn{
+  padding:12px 28px;margin:6px;
+  border:none;border-radius:22px;
+  background:var(--accent-green);color:#fff;
+  font-family:var(--font-body);font-size:0.9rem;font-weight:500;
+  cursor:pointer;white-space:nowrap;
+  transition:all var(--transition-fast);
+}
+#searchBtn:hover{background:var(--accent-green-light);transform:scale(1.02)}
+#searchBtn:active{transform:scale(0.98)}
+
+/* ===== FILTER CHIPS ===== */
+.filter-section{
+  max-width:700px;margin:24px auto 0;
+  animation:fadeInUp 0.8s 0.4s ease both;
+}
+.filter-label{
+  font-size:0.75rem;color:var(--text-tertiary);
+  text-transform:uppercase;letter-spacing:0.08em;
+  margin-bottom:12px;text-align:center;font-weight:500;
+}
+.chips{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+}
+.chip{
+  padding:8px 18px;border-radius:100px;
+  border:1px solid var(--border-light);
+  background:var(--bg-card);color:var(--text-secondary);
+  font-family:var(--font-body);font-size:0.82rem;font-weight:400;
+  cursor:pointer;transition:all var(--transition-fast);
+  white-space:nowrap;
+}
+.chip:hover{
+  border-color:var(--accent-green);color:var(--accent-green);
+  background:var(--accent-green-pale);
+}
+.chip.active{
+  background:var(--accent-green);color:#fff;
+  border-color:var(--accent-green);
+}
+
+/* ===== RESULTS ===== */
+.results-section{padding:48px 24px 32px;max-width:1080px;margin:0 auto}
+.results-header{
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:28px;flex-wrap:wrap;gap:12px;
+}
+.results-title{
+  font-family:var(--font-display);font-size:1.6rem;font-weight:400;
+  color:var(--text-primary);
+}
+.results-title span{color:var(--accent-green);font-style:italic}
+.results-count{font-size:0.85rem;color:var(--text-tertiary);font-weight:400}
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:20px;
+}
+
+/* ===== REMEDY CARD ===== */
+.remedy-card{
+  background:var(--bg-card);
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:28px;
+  transition:all var(--transition-smooth);
+  animation:cardReveal 0.5s ease both;
+  position:relative;overflow:hidden;
+}
+.remedy-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent-green),var(--accent-sage),var(--accent-warm));
+  opacity:0;transition:opacity var(--transition-fast);
+}
+.remedy-card:hover{
+  box-shadow:var(--shadow-lg);
+  border-color:var(--border-medium);
+  transform:translateY(-2px);
+}
+.remedy-card:hover::before{opacity:1}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.card-category{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:4px 12px;border-radius:100px;
+  font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;
+  background:var(--accent-green-pale);color:var(--accent-green);
+}
+.fav-btn{
+  width:32px;height:32px;border-radius:50%;border:none;
+  background:transparent;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-tertiary);transition:all var(--transition-fast);
+  flex-shrink:0;
+}
+.fav-btn:hover,.fav-btn.active{color:#D4726A}
+.fav-btn.active svg{fill:#D4726A}
+.card-name{
+  font-family:var(--font-display);font-size:1.45rem;font-weight:400;
+  color:var(--text-primary);margin-bottom:2px;line-height:1.3;
+}
+.card-latin{
+  font-size:0.82rem;font-style:italic;color:var(--text-tertiary);
+  margin-bottom:14px;font-weight:300;
+}
+.card-origin{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:0.78rem;color:var(--text-secondary);
+  margin-bottom:14px;
+}
+.card-origin svg{width:14px;height:14px;color:var(--accent-warm)}
+.card-desc{
+  font-size:0.9rem;color:var(--text-secondary);
+  line-height:1.65;margin-bottom:18px;font-weight:300;
+}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tag{
+  padding:3px 10px;border-radius:100px;
+  font-size:0.68rem;font-weight:500;
+  background:var(--bg-secondary);color:var(--text-tertiary);
+  letter-spacing:0.02em;
+}
+
+/* Expandable */
+.expand-btn{
+  display:flex;align-items:center;gap:6px;
+  width:100%;padding:12px 0 0;
+  border:none;border-top:1px solid var(--border-light);
+  background:transparent;cursor:pointer;
+  font-family:var(--font-body);font-size:0.82rem;font-weight:500;
+  color:var(--accent-green);
+  transition:all var(--transition-fast);
+}
+.expand-btn:hover{color:var(--accent-green-light)}
+.expand-btn svg{width:16px;height:16px;transition:transform var(--transition-fast)}
+.expand-btn.open svg{transform:rotate(180deg)}
+.card-details{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-details.open{max-height:2000px}
+.details-inner{padding-top:20px}
+.detail-block{margin-bottom:18px}
+.detail-label{
+  font-size:0.7rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:0.08em;color:var(--accent-warm);margin-bottom:6px;
+}
+.detail-text{font-size:0.88rem;color:var(--text-secondary);line-height:1.65;font-weight:300}
+.detail-text ul{list-style:none;padding:0}
+.detail-text li{padding:3px 0;padding-left:16px;position:relative}
+.detail-text li::before{
+  content:'·';position:absolute;left:0;color:var(--accent-green);font-weight:700;
+}
+.safety-block{
+  padding:14px 18px;border-radius:var(--radius-sm);
+  background:var(--accent-warm-pale);
+  border-left:3px solid var(--accent-warm);
+  margin-top:6px;
+}
+.safety-block .detail-text{font-size:0.82rem}
+
+/* ===== NO RESULTS ===== */
+.no-results{
+  text-align:center;padding:60px 24px;
+  animation:fadeInUp 0.5s ease both;
+}
+.no-results-icon{
+  width:64px;height:64px;margin:0 auto 20px;
+  color:var(--text-tertiary);opacity:0.5;
+}
+.no-results h3{
+  font-family:var(--font-display);font-size:1.4rem;font-weight:400;
+  color:var(--text-secondary);margin-bottom:8px;
+}
+.no-results p{font-size:0.9rem;color:var(--text-tertiary);font-weight:300}
+
+/* ===== BROWSE CATEGORIES ===== */
+.browse-section{padding:24px 24px 60px;max-width:1080px;margin:0 auto}
+.section-label{
+  font-family:var(--font-display);font-size:1.5rem;font-weight:400;
+  color:var(--text-primary);margin-bottom:8px;text-align:center;
+}
+.section-sub{
+  font-size:0.9rem;color:var(--text-tertiary);text-align:center;
+  margin-bottom:32px;font-weight:300;
+}
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:14px;
+}
+.cat-card{
+  padding:24px 20px;border-radius:var(--radius-md);
+  border:1px solid var(--border-light);
+  background:var(--bg-card);
+  text-align:center;cursor:pointer;
+  transition:all var(--transition-fast);
+}
+.cat-card:hover{
+  border-color:var(--accent-green);background:var(--accent-green-pale);
+  transform:translateY(-2px);box-shadow:var(--shadow-md);
+}
+.cat-card-icon{font-size:1.6rem;margin-bottom:8px}
+.cat-card-name{
+  font-family:var(--font-display);font-size:1.05rem;
+  color:var(--text-primary);margin-bottom:4px;
+}
+.cat-card-count{font-size:0.75rem;color:var(--text-tertiary)}
+
+/* ===== FAVORITES SECTION ===== */
+.favorites-section{padding:0 24px 48px;max-width:1080px;margin:0 auto;display:none}
+.favorites-section.visible{display:block}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer{
+  padding:40px 24px;
+  background:var(--bg-secondary);
+  border-top:1px solid var(--border-light);
+  transition:background var(--transition-smooth),border-color var(--transition-smooth);
+}
+.disclaimer-inner{
+  max-width:680px;margin:0 auto;text-align:center;
+}
+.disclaimer-icon{
+  width:36px;height:36px;margin:0 auto 14px;
+  color:var(--accent-warm);opacity:0.7;
+}
+.disclaimer h4{
+  font-family:var(--font-display);font-size:1.1rem;font-weight:400;
+  color:var(--text-secondary);margin-bottom:10px;
+}
+.disclaimer p{
+  font-size:0.82rem;color:var(--text-tertiary);line-height:1.7;font-weight:300;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:28px 24px;text-align:center;
+  border-top:1px solid var(--border-light);
+}
+footer p{font-size:0.78rem;color:var(--text-tertiary);font-weight:300}
+footer a{color:var(--accent-green);text-decoration:none}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes cardReveal{
+  from{opacity:0;transform:translateY(16px) scale(0.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* ===== BACK TO TOP ===== */
+.back-top{
+  position:fixed;bottom:24px;right:24px;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--accent-green);color:#fff;border:none;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;
+  transition:all var(--transition-fast);
+  z-index:90;
+}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{transform:scale(1.08)}
+.back-top svg{width:20px;height:20px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  .hero{padding:56px 20px 36px}
+  .results-grid{grid-template-columns:1fr}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .remedy-card{padding:22px}
+  #searchBtn{padding:10px 20px;font-size:0.85rem}
+  .header-inner{padding:12px 16px}
+}
+@media(max-width:380px){
+  .category-grid{grid-template-columns:1fr}
+}
+
+/* ===== LOADING ===== */
+.loading{text-align:center;padding:48px}
+.spinner{
+  width:32px;height:32px;margin:0 auto 16px;
+  border:3px solid var(--border-light);
+  border-top-color:var(--accent-green);
+  border-radius:50%;animation:spin 0.8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" onclick="resetApp()" aria-label="Terra Materia Home">Terra <span>Materia</span></a>
+    <div class="header-actions">
+      <button class="icon-btn" id="favToggle" onclick="toggleFavoritesView()" aria-label="View saved favorites" title="Favorites">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+      </button>
+      <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <div class="hero-badge">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+    Ancestral Food Wisdom
+  </div>
+  <h1>Rediscover nature's traditional <em>supports</em></h1>
+  <p class="hero-sub">Explore whole-food and plant-based remedies historically used across cultures to support wellbeing — grounded in tradition, presented with care.</p>
+
+  <div class="search-section">
+    <div class="search-wrapper">
+      <span class="search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+      </span>
+      <input type="text" id="searchInput" placeholder="Try: anxiety, insomnia, inflammation, fatigue…" aria-label="Search for a condition or symptom" autocomplete="off">
+      <button id="searchBtn" onclick="performSearch()">Search</button>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <div class="filter-label">Quick explore</div>
+    <div class="chips" id="chipContainer" role="group" aria-label="Quick filter categories">
+      <!-- chips injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section" id="resultsSection" style="display:none">
+  <div class="results-header">
+    <h2 class="results-title">Supports for <span id="resultCondition"></span></h2>
+    <span class="results-count" id="resultCount"></span>
+  </div>
+  <div class="results-grid" id="resultsGrid"></div>
+</section>
+
+<!-- FAVORITES -->
+<section class="favorites-section" id="favoritesSection">
+  <div class="results-header">
+    <h2 class="results-title">Your <span>Saved</span> Remedies</h2>
+    <span class="results-count" id="favCount"></span>
+  </div>
+  <div class="results-grid" id="favGrid"></div>
+</section>
+
+<!-- BROWSE BY CATEGORY -->
+<section class="browse-section" id="browseSection">
+  <h2 class="section-label">Browse by Concern</h2>
+  <p class="section-sub">Select a topic to explore traditional supports</p>
+  <div class="category-grid" id="categoryGrid"></div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disclaimer">
+  <div class="disclaimer-inner">
+    <div class="disclaimer-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="36" height="36"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+    </div>
+    <h4>Important Notice</h4>
+    <p>This resource is for educational purposes only and is not intended as medical advice. The information presented reflects traditional and historical uses of whole foods and botanicals across cultures. It does not constitute a recommendation for treatment of any condition. Always consult a qualified healthcare professional before making changes to your diet or health routine — especially if you are pregnant, nursing, taking medications, or managing a chronic health condition.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Terra Materia — Ancestral Food Wisdom &nbsp;·&nbsp; Educational resource only &nbsp;·&nbsp; Not medical advice</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+</button>
+
+<script>
+/* =====================================================
+   TERRA MATERIA — ANCESTRAL FOOD WISDOM DATABASE
+   
+   All data below is based on widely documented 
+   traditional uses in herbal and ethnobotanical 
+   literature. No uses have been invented or fabricated.
+   Safety data reflects commonly documented cautions.
+   ===================================================== */
+
+const remedyDB = [
+  // ── CHAMOMILE ──
+  {
+    name: "Chamomile",
+    latin: "Matricaria chamomilla",
+    category: "Herb",
+    origin: "Europe, Western Asia — widely used in European folk medicine, ancient Egyptian and Greek traditions",
+    conditions: ["anxiety", "stress", "insomnia", "sleep", "digestion", "digestive issues", "nervous system", "inflammation"],
+    description: "Traditionally valued across European and Middle Eastern cultures as a gentle calming botanical. Historically used as a tea to support relaxation and ease occasional digestive discomfort.",
+    preparation: ["Dried flower tea — steep 1–2 teaspoons in hot water for 5–10 minutes", "Traditionally consumed before bedtime for relaxation"],
+    serving: "1–3 cups of tea daily, traditionally. This is historical guidance, not a dosage recommendation.",
+    compounds: "Apigenin (flavonoid), bisabolol, chamazulene, flavonoids",
+    traditional: "In European folk medicine, chamomile was one of the most widely used household herbs, traditionally prepared as a tea for calming the nerves and settling the stomach. It was used in ancient Egypt, Greece, and Rome.",
+    modern: "Apigenin, a flavonoid in chamomile, has been studied for its interaction with GABA receptors. Research is ongoing and findings are preliminary.",
+    safety: "Generally well-tolerated. May cause allergic reactions in individuals sensitive to plants in the Asteraceae/Compositae family (ragweed, chrysanthemums, marigolds). May interact with blood-thinning medications. Consult a healthcare provider if pregnant.",
+    tags: ["Nervous System Support", "Calming", "Digestive Support", "Anti-inflammatory"]
+  },
+  // ── TURMERIC ──
+  {
+    name: "Turmeric",
+    latin: "Curcuma longa",
+    category: "Root / Spice",
+    origin: "South Asia — central to Ayurvedic medicine and South Asian culinary traditions for thousands of years",
+    conditions: ["inflammation", "joint pain", "digestion", "digestive issues", "immunity", "skin"],
+    description: "A golden-colored rhizome that has been a cornerstone of Ayurvedic and South Asian traditional medicine. Historically valued for its role in supporting a healthy inflammatory response and digestive function.",
+    preparation: ["Golden milk — turmeric simmered with milk (or plant milk), black pepper, and a small amount of fat", "Added to curries, soups, and rice dishes", "Turmeric paste mixed with warm water"],
+    serving: "Traditionally used as a culinary spice in food preparation. Golden milk typically uses ¼–½ teaspoon per cup. Best absorbed with black pepper and a source of fat.",
+    compounds: "Curcumin (primary curcuminoid), demethoxycurcumin, bisdemethoxycurcumin, volatile oils",
+    traditional: "Turmeric has been used in Ayurvedic medicine for over 4,000 years. It was traditionally used to support digestion, joint comfort, and skin health. In traditional Chinese medicine, it is known as Jiang Huang.",
+    modern: "Curcumin has been extensively studied for its antioxidant properties. Its bioavailability is limited but may be enhanced by piperine (from black pepper). Research continues across many areas.",
+    safety: "Generally safe as a culinary spice. High-dose supplemental curcumin may cause digestive upset in some individuals. May interact with blood-thinning medications and diabetes drugs. Those with gallbladder disease should use caution. Consult a healthcare provider before supplementing.",
+    tags: ["Anti-inflammatory", "Antioxidant", "Digestive Support", "Joint Support"]
+  },
+  // ── ASHWAGANDHA ──
+  {
+    name: "Ashwagandha",
+    latin: "Withania somnifera",
+    category: "Herb / Root",
+    origin: "India, North Africa — one of the most important herbs in Ayurvedic medicine, used for over 3,000 years",
+    conditions: ["stress", "anxiety", "fatigue", "energy", "sleep", "insomnia", "nervous system", "hormonal", "hormonal imbalance"],
+    description: "Known as 'Indian ginseng,' ashwagandha is classified as a Rasayana (rejuvenating herb) in Ayurveda. Traditionally used to support the body's resilience to stress and promote vitality.",
+    preparation: ["Root powder mixed into warm milk with honey", "Traditionally prepared as a decoction (simmered in water)", "Added to smoothies or warm beverages"],
+    serving: "Traditionally, small amounts of root powder (¼–½ teaspoon) were mixed into warm milk. This is historical context, not a dosage recommendation.",
+    compounds: "Withanolides (steroidal lactones), withaferin A, alkaloids, iron",
+    traditional: "In Ayurveda, ashwagandha is classified as a Medhya Rasayana — an herb that supports mental function and vitality. It has been used traditionally to support healthy energy levels and calm the mind.",
+    modern: "Withanolides are the primary bioactive compounds studied. Some clinical trials have explored its effects on stress markers, though research is ongoing and not conclusive.",
+    safety: "May cause mild digestive upset in some individuals. Those with thyroid conditions should consult a healthcare provider, as it may affect thyroid hormone levels. Not recommended during pregnancy. May interact with sedatives, thyroid medications, and immunosuppressants.",
+    tags: ["Adaptogenic", "Nervous System Support", "Energy Support", "Calming"]
+  },
+  // ── GINGER ──
+  {
+    name: "Ginger",
+    latin: "Zingiber officinale",
+    category: "Root",
+    origin: "Southeast Asia — used in Traditional Chinese Medicine, Ayurveda, and many global culinary traditions",
+    conditions: ["digestion", "digestive issues", "nausea", "inflammation", "immunity", "energy"],
+    description: "One of the most widely used culinary and medicinal roots in world history. Traditionally valued across Asian, Middle Eastern, and African traditions for supporting digestion and warmth.",
+    preparation: ["Fresh sliced ginger steeped in hot water as tea", "Grated into soups, stir-fries, and broths", "Candied or dried ginger as a traditional digestive aid"],
+    serving: "Traditionally consumed as tea (a few thin slices in hot water) or incorporated freely into cooking.",
+    compounds: "Gingerols, shogaols, zingerone, paradols",
+    traditional: "Ginger has been used for thousands of years in TCM (where it is called Sheng Jiang for fresh, Gan Jiang for dried) and Ayurveda. It was traditionally considered a warming herb that supports digestion and circulation.",
+    modern: "Gingerols and shogaols have been studied for antioxidant properties. Some research has explored ginger's effects on nausea, though results vary by context.",
+    safety: "Generally safe as a food and tea. May cause heartburn in sensitive individuals. High amounts may interact with blood-thinning medications. Those with gallstone disease should consult a provider.",
+    tags: ["Digestive Support", "Anti-inflammatory", "Warming", "Immune Support"]
+  },
+  // ── HOLY BASIL (TULSI) ──
+  {
+    name: "Holy Basil (Tulsi)",
+    latin: "Ocimum tenuiflorum",
+    category: "Herb",
+    origin: "India — revered in Hindu tradition and central to Ayurvedic herbalism",
+    conditions: ["stress", "anxiety", "energy", "fatigue", "immunity", "nervous system", "inflammation"],
+    description: "Known as the 'Queen of Herbs' in Ayurveda, tulsi is considered a sacred plant in Hindu culture. Traditionally used as a tea to support resilience to stress and promote clarity.",
+    preparation: ["Fresh or dried leaf tea — steep for 5–10 minutes", "Traditionally chewed fresh as a daily tonic in Indian households"],
+    serving: "Traditionally consumed as 1–2 cups of tea daily. This is historical context only.",
+    compounds: "Eugenol, rosmarinic acid, apigenin, ursolic acid, ocimumosides",
+    traditional: "Tulsi has been grown in Indian households for thousands of years, both as a sacred plant and a household remedy. In Ayurveda, it is classified as a Rasayana and considered to promote longevity and balance.",
+    modern: "Eugenol and rosmarinic acid have been studied for antioxidant properties. Some preliminary research has explored adaptogenic effects, but evidence remains limited.",
+    safety: "Generally well-tolerated as a tea. May have mild blood-thinning effects. Not recommended in high amounts during pregnancy. May affect blood sugar levels — those on diabetes medications should consult a provider.",
+    tags: ["Adaptogenic", "Nervous System Support", "Immune Support", "Calming"]
+  },
+  // ── REISHI MUSHROOM ──
+  {
+    name: "Reishi Mushroom",
+    latin: "Ganoderma lucidum",
+    category: "Mushroom / Fungus",
+    origin: "East Asia — used in Traditional Chinese Medicine for over 2,000 years, known as Ling Zhi (Spirit Mushroom)",
+    conditions: ["immunity", "stress", "sleep", "insomnia", "nervous system", "inflammation", "energy", "fatigue"],
+    description: "One of the most revered mushrooms in Traditional Chinese Medicine, historically reserved for royalty. Traditionally used to support immune function and promote calm, restful sleep.",
+    preparation: ["Dried slices simmered as a decoction (tea) for 30+ minutes", "Powdered and added to hot water, broth, or coffee alternatives", "Traditionally prepared in soups"],
+    serving: "Traditionally consumed as a decoction or in small amounts of powder. This is historical context only.",
+    compounds: "Beta-glucans (polysaccharides), triterpenes (ganoderic acids), sterols",
+    traditional: "Reishi has been called the 'Mushroom of Immortality' in Chinese tradition. In the Shen Nong Ben Cao Jing (one of the oldest Chinese materia medica texts), it was classified as a superior herb that could be taken long-term.",
+    modern: "Beta-glucans have been studied for their potential role in modulating immune function. Triterpenes have been researched for various bioactive properties. Research is ongoing.",
+    safety: "Generally well-tolerated in traditional preparations. May cause digestive upset or dryness in some individuals. May interact with blood-thinning medications and immunosuppressive drugs. Consult a healthcare provider before use, especially with existing health conditions.",
+    tags: ["Immune Support", "Adaptogenic", "Calming", "Nervous System Support"]
+  },
+  // ── LAVENDER ──
+  {
+    name: "Lavender",
+    latin: "Lavandula angustifolia",
+    category: "Herb",
+    origin: "Mediterranean region — used in European, Middle Eastern, and North African traditions",
+    conditions: ["anxiety", "stress", "insomnia", "sleep", "nervous system", "skin"],
+    description: "Widely used across Mediterranean and European traditions as a calming herb. Traditionally valued for its soothing aroma and gentle relaxing properties when prepared as a tea or used aromatically.",
+    preparation: ["Dried flower tea — steep 1–2 teaspoons for 5–8 minutes", "Culinary use in small amounts (e.g., lavender honey, baked goods)", "Aromatherapy — dried bundles or essential oil used externally"],
+    serving: "As a tea, traditionally consumed in the evening. Culinary use in small amounts. This is historical context only.",
+    compounds: "Linalool, linalyl acetate, terpinen-4-ol, camphor (in small amounts)",
+    traditional: "Lavender has been used since ancient Roman times for bathing and relaxation (its name derives from the Latin 'lavare,' meaning to wash). It was widely used in European folk medicine as a calming herb.",
+    modern: "Linalool has been studied for its interaction with the nervous system. Some research has explored lavender aromatherapy, though findings are preliminary and vary in methodology.",
+    safety: "Generally well-tolerated as a tea or in culinary amounts. Oral lavender may cause digestive upset in some individuals. Essential oil should not be ingested. Some individuals may be sensitive to topical application.",
+    tags: ["Calming", "Nervous System Support", "Aromatic"]
+  },
+  // ── BONE BROTH ──
+  {
+    name: "Bone Broth",
+    latin: null,
+    category: "Mineral-Rich Broth",
+    origin: "Global — present in virtually every traditional cuisine worldwide, from Chinese medicine to European folk traditions to African and indigenous American food traditions",
+    conditions: ["digestion", "digestive issues", "joint pain", "inflammation", "immunity", "gut health", "skin"],
+    description: "A foundational food in traditional diets across the world. Made by slow-simmering animal bones and connective tissue, valued for its mineral content and traditional role in supporting digestive comfort and overall nourishment.",
+    preparation: ["Slow-simmer bones (chicken, beef, or fish) for 12–24 hours with water and a splash of vinegar", "Include aromatics like onion, garlic, ginger, or herbs", "Strain and consume as a warm drink or use as a soup base"],
+    serving: "Traditionally consumed as a warm beverage or as the base for soups and stews. 1–2 cups daily was common in many traditional diets.",
+    compounds: "Collagen (yields gelatin), glycine, proline, glutamine, calcium, magnesium, phosphorus, and other minerals (amounts vary by preparation)",
+    traditional: "Nearly every traditional food culture includes some form of long-simmered bone broth. In Traditional Chinese Medicine, bone broths are considered deeply nourishing. In European folk traditions, chicken broth has long been a household staple during illness.",
+    modern: "Gelatin and glycine have been studied for roles in connective tissue and gut lining health. Actual mineral content of broth varies widely depending on preparation method, bones used, and cooking time.",
+    safety: "Generally very well-tolerated. Individuals with histamine sensitivity may react to long-simmered broths. Quality of bones matters — sourcing from well-raised animals is traditionally preferred. Lead content concerns have been raised in some studies; using filtered water and quality bones may reduce risk.",
+    tags: ["Gut Support", "Mineral-Rich", "Joint Support", "Immune Support"]
+  },
+  // ── SAUERKRAUT / FERMENTED VEGETABLES ──
+  {
+    name: "Sauerkraut (Lacto-Fermented Vegetables)",
+    latin: null,
+    category: "Fermented Food",
+    origin: "Central and Eastern Europe, East Asia (kimchi tradition in Korea) — fermentation traditions exist in nearly every culture worldwide",
+    conditions: ["digestion", "digestive issues", "gut health", "immunity", "inflammation", "mood", "brain fog"],
+    description: "Lacto-fermented vegetables are among the oldest preserved foods in human history. Traditionally valued for supporting digestive health and providing beneficial bacteria to the gut.",
+    preparation: ["Shredded cabbage massaged with salt, packed into a jar, and fermented at room temperature for 1–4 weeks", "Consumed raw as a condiment or side dish to preserve live cultures", "Traditionally paired with heavier meals to aid digestion"],
+    serving: "Traditionally consumed in small amounts (a few tablespoons) alongside meals. This is historical context only.",
+    compounds: "Lactobacillus bacteria (and other beneficial microbes), vitamin C, vitamin K2, organic acids (lactic acid)",
+    traditional: "Fermented vegetables have been staples in European (sauerkraut), Korean (kimchi), Japanese (tsukemono), and many other food traditions for centuries. Captain James Cook famously carried sauerkraut on voyages to prevent scurvy.",
+    modern: "The role of fermented foods in supporting a diverse gut microbiome has received significant scientific interest. Lactobacillus species in fermented vegetables have been studied for various health properties, though research is still developing.",
+    safety: "Generally very well-tolerated. Those new to fermented foods may experience temporary bloating as the gut adjusts. Individuals with histamine sensitivity may react to fermented foods. High sodium content if heavily salted.",
+    tags: ["Gut Support", "Immune Support", "Probiotic", "Anti-inflammatory"]
+  },
+  // ── VALERIAN ROOT ──
+  {
+    name: "Valerian Root",
+    latin: "Valeriana officinalis",
+    category: "Herb / Root",
+    origin: "Europe, parts of Asia — used in Greek and Roman medicine, and extensively in European herbal traditions",
+    conditions: ["insomnia", "sleep", "anxiety", "stress", "nervous system"],
+    description: "One of the most well-known traditional sleep-support herbs in European herbalism. Valerian root has been used since ancient Greek and Roman times for its calming properties.",
+    preparation: ["Dried root tea — steep 1 teaspoon in hot water for 10–15 minutes (has a strong, earthy flavor)", "Traditionally prepared as a decoction or tincture"],
+    serving: "Traditionally consumed as a tea 30–60 minutes before bedtime. The strong taste was historically masked with honey or combined with other herbs.",
+    compounds: "Valerenic acid, isovaleric acid, iridoids (valepotriates), GABA, flavonoids",
+    traditional: "The Greek physician Galen recommended valerian for insomnia. It was widely used throughout medieval Europe and remained one of the most popular herbal sedatives into the modern era. Its name may derive from the Latin 'valere' (to be strong/healthy).",
+    modern: "Valerenic acid has been studied for its potential interaction with GABA receptors. Some clinical trials have explored valerian for sleep quality, with mixed but generally favorable findings for mild sleep difficulties.",
+    safety: "May cause headache, dizziness, or digestive upset in some individuals. Should not be combined with sedative medications, alcohol, or other CNS depressants. Not recommended during pregnancy. May cause morning grogginess in some people.",
+    tags: ["Nervous System Support", "Calming", "Sleep Support"]
+  },
+  // ── LEMON BALM ──
+  {
+    name: "Lemon Balm",
+    latin: "Melissa officinalis",
+    category: "Herb",
+    origin: "Southern Europe, Mediterranean — used in European herbalism for over 2,000 years",
+    conditions: ["anxiety", "stress", "sleep", "insomnia", "digestion", "digestive issues", "nervous system", "mood"],
+    description: "A gentle, lemon-scented herb from the mint family, traditionally brewed as a calming tea. Historically valued in European herbalism for easing nervous tension and supporting digestion.",
+    preparation: ["Fresh or dried leaf tea — steep for 5–10 minutes", "Traditionally combined with chamomile or other calming herbs", "Can be added fresh to salads and cold beverages"],
+    serving: "Traditionally enjoyed as 1–3 cups of tea daily, often in the afternoon or evening. This is historical context only.",
+    compounds: "Rosmarinic acid, flavonoids (luteolin, apigenin), terpenes (citral, citronellal)",
+    traditional: "Lemon balm was recommended by Paracelsus as an 'elixir of life.' The 11th-century Persian physician Avicenna recommended it for mood support. Carmelite nuns created the famous Carmelite Water using lemon balm in the 14th century.",
+    modern: "Rosmarinic acid has been studied as an antioxidant. Some preliminary studies have explored lemon balm's effects on mood and cognitive function, but evidence remains limited.",
+    safety: "Generally very well-tolerated. Those with thyroid conditions should consult a healthcare provider, as lemon balm may affect thyroid function at high doses. May enhance the effects of sedative medications.",
+    tags: ["Calming", "Nervous System Support", "Digestive Support", "Mood Support"]
+  },
+  // ── SWEET POTATO ──
+  {
+    name: "Sweet Potato",
+    latin: "Ipomoea batatas",
+    category: "Root / Tuber",
+    origin: "Central and South America — a staple food in Okinawan (Japan), African, Polynesian, and indigenous American diets",
+    conditions: ["energy", "fatigue", "blood sugar", "digestion", "skin", "immunity", "inflammation"],
+    description: "A deeply nourishing root vegetable that has been a dietary staple across many traditional cultures. Valued for its sustained energy, rich nutrient profile, and gentle sweetness.",
+    preparation: ["Baked, roasted, or steamed whole", "Mashed with warming spices (cinnamon, ginger)", "Added to soups, stews, and porridges"],
+    serving: "Consumed as a staple food in many traditional diets. In Okinawa, sweet potatoes historically comprised a significant portion of the daily diet.",
+    compounds: "Beta-carotene, vitamin C, manganese, potassium, dietary fiber, anthocyanins (in purple varieties)",
+    traditional: "Sweet potatoes were a dietary staple in the traditional Okinawan diet, one of the world's noted longevity cultures. They have been cultivated for thousands of years in Central and South America and are central to many African and Pacific Island food traditions.",
+    modern: "Beta-carotene is a well-established precursor to vitamin A. The fiber and complex carbohydrate content provides sustained energy. Purple sweet potatoes contain anthocyanins, which have been studied as antioxidants.",
+    safety: "Very well-tolerated as a whole food. Those monitoring potassium intake (e.g., with kidney conditions) should be mindful of the potassium content. Oxalate content may be a consideration for those prone to kidney stones.",
+    tags: ["Energy Support", "Nutrient-Dense", "Antioxidant", "Gut Support"]
+  },
+  // ── DARK LEAFY GREENS (KALE/SPINACH) ──
+  {
+    name: "Dark Leafy Greens",
+    latin: "Various (Brassica oleracea, Spinacia oleracea, etc.)",
+    category: "Vegetable",
+    origin: "Global — dark greens are central to virtually every traditional cuisine, from Mediterranean to West African to East Asian",
+    conditions: ["fatigue", "energy", "brain fog", "inflammation", "immunity", "hormonal", "hormonal imbalance", "mood", "skin"],
+    description: "Dark leafy greens — including kale, spinach, collard greens, chard, and dandelion greens — are among the most nutrient-dense foods in the human diet. Valued across all traditional food cultures.",
+    preparation: ["Lightly sautéed with garlic and olive oil", "Added to soups and stews", "Blended into smoothies or juiced", "Steamed and seasoned traditionally"],
+    serving: "Consumed daily in traditional diets around the world. Cooking can reduce oxalate content and improve mineral availability in some greens.",
+    compounds: "Folate, iron, magnesium, calcium, vitamin K, vitamin C, vitamin A (as beta-carotene), fiber, chlorophyll",
+    traditional: "Dark greens have been dietary staples in every region of the world. Collard greens are central to Southern U.S. and West African food traditions. Dandelion greens were used in European folk herbalism. Asian cultures rely heavily on bok choy, chrysanthemum greens, and water spinach.",
+    modern: "Dark leafy greens are among the most nutrient-dense foods, providing meaningful amounts of folate, magnesium, iron, and vitamin K. Magnesium is involved in hundreds of enzymatic processes in the body.",
+    safety: "Generally very safe as food. Those on blood-thinning medications (warfarin) should maintain consistent vitamin K intake rather than dramatically increasing greens. Raw spinach and chard contain oxalates, which may be a concern for those prone to kidney stones — cooking reduces oxalate content.",
+    tags: ["Mineral-Rich", "Nutrient-Dense", "Energy Support", "Anti-inflammatory"]
+  },
+  // ── MISO ──
+  {
+    name: "Miso",
+    latin: null,
+    category: "Fermented Food",
+    origin: "Japan — a cornerstone of Japanese cuisine and traditional dietary practice for over 1,300 years",
+    conditions: ["digestion", "digestive issues", "gut health", "immunity", "energy", "fatigue"],
+    description: "A fermented soybean paste that is a daily staple in traditional Japanese cuisine. Valued for its rich umami flavor, probiotic content, and nourishing properties.",
+    preparation: ["Dissolved in warm (not boiling) water or broth to make miso soup", "Used as a seasoning in dressings, marinades, and glazes", "Traditionally consumed daily as miso soup with breakfast"],
+    serving: "Traditionally consumed daily as a small bowl of miso soup, often with breakfast. Heat should be gentle to preserve live cultures.",
+    compounds: "Beneficial bacteria (Aspergillus oryzae culture), isoflavones, B vitamins, enzymes, amino acids, minerals (zinc, manganese)",
+    traditional: "Miso has been a daily staple in Japan for centuries and is considered a foundational health food in Japanese dietary tradition. Samurai warriors reportedly consumed miso soup daily. Different varieties (white, red, barley) reflect regional traditions.",
+    modern: "As a fermented food, miso contains live cultures that may contribute to gut microbiome diversity. Fermentation increases bioavailability of certain nutrients. The isoflavone content has been widely studied, though findings are complex and context-dependent.",
+    safety: "Generally well-tolerated. High in sodium — those monitoring sodium intake should be mindful. Contains soy — those with soy allergies should avoid. Unpasteurized miso contains live cultures; pasteurized versions do not.",
+    tags: ["Gut Support", "Probiotic", "Mineral-Rich", "Immune Support"]
+  },
+  // ── FLAXSEED ──
+  {
+    name: "Flaxseed",
+    latin: "Linum usitatissimum",
+    category: "Seed",
+    origin: "Mesopotamia, ancient Egypt — one of the oldest cultivated crops in human history",
+    conditions: ["inflammation", "hormonal", "hormonal imbalance", "digestion", "digestive issues", "skin", "gut health"],
+    description: "One of the earliest cultivated plants, valued in ancient civilizations for both nutritional and textile purposes. Traditionally used as a mucilaginous seed to support digestive regularity and provide essential fatty acids.",
+    preparation: ["Ground fresh (whole seeds may pass through undigested)", "Added to porridge, smoothies, or baked goods", "Soaked in water to create a mucilaginous gel traditionally used for digestive support"],
+    serving: "Traditionally consumed in small amounts (1–2 tablespoons of ground seed daily). Best consumed freshly ground, as the oils oxidize quickly.",
+    compounds: "Alpha-linolenic acid (ALA, an omega-3 fatty acid), lignans (secoisolariciresinol diglucoside), soluble and insoluble fiber, mucilage",
+    traditional: "Flaxseed was cultivated in Babylon as early as 3000 BCE. Charlemagne reportedly passed laws requiring his subjects to consume it. Hippocrates recommended flax for digestive complaints. It was a staple in many traditional Northern European diets.",
+    modern: "ALA is an essential omega-3 fatty acid. Flax lignans have been studied for their phytoestrogenic properties. The mucilage and fiber content supports digestive regularity. Research into flaxseed's various components is ongoing.",
+    safety: "Generally well-tolerated. Should be consumed with adequate water due to high fiber content. Raw flaxseed contains small amounts of cyanogenic glycosides — these are largely neutralized by cooking and are not a concern in normal dietary amounts. May interact with blood-thinning medications. Those with hormone-sensitive conditions should consult a provider due to lignan content.",
+    tags: ["Anti-inflammatory", "Omega-3 Source", "Gut Support", "Hormonal Support"]
+  },
+  // ── PEPPERMINT ──
+  {
+    name: "Peppermint",
+    latin: "Mentha × piperita",
+    category: "Herb",
+    origin: "Europe — widely used across European, Middle Eastern, and North African herbal traditions",
+    conditions: ["digestion", "digestive issues", "nausea", "energy", "brain fog", "headache", "mood"],
+    description: "A naturally occurring hybrid mint with a long history of traditional use for digestive comfort and mental clarity. One of the most widely consumed herbal teas in the world.",
+    preparation: ["Fresh or dried leaf tea — steep for 5–7 minutes", "Fresh leaves added to water, salads, or culinary dishes", "Traditionally inhaled (aromatic use) for mental clarity"],
+    serving: "Traditionally consumed as tea, 1–3 cups daily. Also widely used as a culinary herb. This is historical context only.",
+    compounds: "Menthol, menthone, rosmarinic acid, flavonoids",
+    traditional: "Peppermint has been used in European and Middle Eastern traditions for centuries for digestive comfort. Dried peppermint leaves have been found in Egyptian pyramids dating to approximately 1000 BCE. It was widely used in Greek and Roman herbal traditions.",
+    modern: "Menthol is the primary active compound and has been studied for various properties. Peppermint oil has been the subject of clinical research for digestive comfort, with some positive findings, though more research is needed.",
+    safety: "Generally well-tolerated as a tea. May worsen symptoms of gastroesophageal reflux (GERD) in some individuals. Peppermint oil should be used cautiously and is not recommended for young children. Those with bile duct or gallbladder issues should consult a provider.",
+    tags: ["Digestive Support", "Cooling", "Mental Clarity", "Aromatic"]
+  },
+  // ── OATS ──
+  {
+    name: "Oats",
+    latin: "Avena sativa",
+    category: "Grain",
+    origin: "Europe, Central Asia — a staple grain in Northern European traditional diets for thousands of years",
+    conditions: ["anxiety", "stress", "nervous system", "energy", "fatigue", "digestion", "skin", "blood sugar"],
+    description: "A nourishing whole grain long valued in European herbalism not only as a staple food but also as a gentle nervous system tonic. Traditionally used to support calm energy and steady nourishment.",
+    preparation: ["Cooked as porridge (traditional preparation across Northern Europe)", "Oat straw tea (Avena sativa — the green milky tops steeped as an infusion)", "Added to baked goods and soups"],
+    serving: "Traditionally consumed as a daily staple porridge. Oat straw infusions were traditionally steeped for long periods. This is historical context only.",
+    compounds: "Beta-glucan (soluble fiber), avenanthramides (antioxidants unique to oats), B vitamins, iron, magnesium, zinc",
+    traditional: "Oats have been a staple food in Scotland, Ireland, and Northern Europe for millennia. In traditional Western herbalism, oat straw (the green tops) was valued as a nervine tonic — a gentle support for the nervous system during times of stress and depletion.",
+    modern: "Beta-glucan is a well-studied soluble fiber with recognized effects on cholesterol and blood sugar management. Avenanthramides are antioxidant compounds unique to oats that have been studied for anti-inflammatory properties.",
+    safety: "Generally very well-tolerated. Those with celiac disease should use certified gluten-free oats, as oats are often cross-contaminated with wheat. Oats themselves do not contain gluten but contain avenin, which a small number of celiacs may react to.",
+    tags: ["Nervous System Support", "Energy Support", "Gut Support", "Mineral-Rich"]
+  },
+  // ── ELDERBERRY ──
+  {
+    name: "Elderberry",
+    latin: "Sambucus nigra",
+    category: "Fruit",
+    origin: "Europe, North America — used in European folk medicine and by indigenous North American peoples",
+    conditions: ["immunity", "inflammation", "cold", "flu"],
+    description: "A dark purple berry with a long history of traditional use in European and North American folk medicine, particularly during seasonal challenges. Traditionally prepared as a syrup, tea, or preserve.",
+    preparation: ["Cooked into a syrup with honey and spices (must be cooked — raw elderberries are not safe to consume)", "Dried berry tea — simmered for 15–20 minutes", "Traditionally made into preserves, wines, and cordials"],
+    serving: "Traditionally consumed as elderberry syrup (1–2 teaspoons) during seasonal challenges. Always cooked — never consumed raw. This is historical context only.",
+    compounds: "Anthocyanins (cyanidin-3-glucoside, cyanidin-3-sambubioside), vitamin C, flavonoids, phenolic acids",
+    traditional: "Hippocrates reportedly referred to the elder tree as his 'medicine chest.' It was widely used in European folk medicine. Indigenous North American peoples used various Sambucus species in traditional practices. In European folk tradition, elderberry wine and preserves were common household preparations.",
+    modern: "Elderberries are rich in anthocyanins, which are studied for antioxidant properties. Some clinical trials have explored elderberry preparations in the context of seasonal immune support, with some positive findings, though more research is needed.",
+    safety: "Raw or unripe elderberries, bark, and leaves contain cyanogenic glycosides and should never be consumed raw. Always cook elderberries before use. May interact with immunosuppressive medications and diabetes drugs. Those with autoimmune conditions should consult a healthcare provider.",
+    tags: ["Immune Support", "Antioxidant", "Seasonal Support"]
+  },
+  // ── WALNUTS ──
+  {
+    name: "Walnuts",
+    latin: "Juglans regia",
+    category: "Nut",
+    origin: "Central Asia, Persia — valued in traditional diets across the Mediterranean, Middle East, and Asia for millennia",
+    conditions: ["brain fog", "mood", "inflammation", "energy", "hormonal", "skin"],
+    description: "A nutrient-dense nut with a distinctive brain-like shape, long valued in traditional diets as a nourishing food. Historically associated with cognitive support across many cultures.",
+    preparation: ["Consumed raw or lightly toasted", "Added to salads, porridge, or baked goods", "Traditionally paired with honey in Middle Eastern and Mediterranean cuisines", "Walnut oil used in salad dressings"],
+    serving: "Traditionally consumed as a handful (approximately 1 ounce / 28g) as part of the daily diet.",
+    compounds: "Alpha-linolenic acid (ALA omega-3), polyphenols (ellagitannins, ellagic acid), vitamin E (gamma-tocopherol), melatonin, magnesium, copper",
+    traditional: "In traditional Persian and Middle Eastern medicine, walnuts were associated with brain and cognitive support (the Doctrine of Signatures noted their brain-like appearance). They have been cultivated for thousands of years and are a staple of Mediterranean dietary traditions.",
+    modern: "Walnuts are one of the richest plant sources of ALA omega-3 fatty acids. Their polyphenol content has been studied for antioxidant and anti-inflammatory properties. Observational studies have associated regular nut consumption with various health markers.",
+    safety: "Tree nut allergy is common and can be severe — those with nut allergies must avoid walnuts. High in calories, so portion awareness is relevant. Generally very safe as a whole food for those without allergies.",
+    tags: ["Brain Support", "Omega-3 Source", "Anti-inflammatory", "Nutrient-Dense"]
+  },
+  // ── SEAWEED / SEA VEGETABLES ──
+  {
+    name: "Seaweed (Sea Vegetables)",
+    latin: "Various (Laminaria, Undaria, Porphyra, etc.)",
+    category: "Sea Vegetable",
+    origin: "East Asia (Japan, Korea, China), coastal communities worldwide — a staple in Japanese, Korean, and many coastal food traditions",
+    conditions: ["thyroid", "hormonal", "hormonal imbalance", "fatigue", "energy", "skin", "immunity", "inflammation"],
+    description: "Sea vegetables — including nori, wakame, kombu, dulse, and kelp — have been dietary staples in coastal cultures worldwide. Valued for their exceptional mineral density, particularly iodine.",
+    preparation: ["Nori sheets used in sushi and as a snack", "Kombu added to broths and soups (traditional Japanese dashi)", "Wakame rehydrated and added to miso soup or salads", "Dulse added to soups or eaten as a dried snack"],
+    serving: "Traditionally consumed in small, regular amounts as part of daily cuisine in coastal East Asian cultures.",
+    compounds: "Iodine, fucoidan (in brown seaweeds), alginates, iron, calcium, magnesium, B vitamins (including B12 in some species, though bioavailability varies), vitamin K",
+    traditional: "Seaweed has been a dietary staple in Japan and Korea for thousands of years and is considered a foundational health food. Coastal communities in Ireland, Scotland, Iceland, and Polynesia also have long traditions of seaweed consumption.",
+    modern: "Sea vegetables are among the richest natural sources of iodine, a mineral essential for thyroid function. Fucoidan has been studied for various bioactive properties. Mineral content varies significantly by species and growing conditions.",
+    safety: "Iodine content can be very high, especially in kelp/kombu. Excessive iodine intake can adversely affect thyroid function. Those with thyroid conditions should consult a healthcare provider and be cautious with high-iodine seaweeds. Heavy metal contamination can occur depending on source waters — quality sourcing is important. Those on thyroid medications should seek guidance.",
+    tags: ["Mineral-Rich", "Thyroid Support", "Nutrient-Dense", "Immune Support"]
+  },
+  // ── PASSIONFLOWER ──
+  {
+    name: "Passionflower",
+    latin: "Passiflora incarnata",
+    category: "Herb",
+    origin: "Americas — used traditionally by indigenous peoples of the southeastern United States and Central and South America",
+    conditions: ["anxiety", "insomnia", "sleep", "stress", "nervous system"],
+    description: "A climbing vine with intricate flowers, used traditionally by indigenous peoples of the Americas for calming support. Later adopted into European herbalism after European contact.",
+    preparation: ["Dried aerial parts (leaves, stems, flowers) steeped as tea for 10–15 minutes", "Traditionally combined with other calming herbs like chamomile or valerian"],
+    serving: "Traditionally consumed as a tea, particularly in the evening. This is historical context only.",
+    compounds: "Flavonoids (chrysin, vitexin, isovitexin), alkaloids (harman, harmine in small amounts), GABA (in small amounts)",
+    traditional: "Indigenous peoples of the Americas used passionflower for various purposes before European contact. Spanish explorers documented its use in the 16th century. It was later incorporated into the European herbal pharmacopoeia as a calming herb.",
+    modern: "Chrysin and other flavonoids have been studied for their potential interaction with GABA receptors. Some clinical trials have explored passionflower for anxiety and sleep, with preliminary positive findings. More research is needed.",
+    safety: "Generally well-tolerated as a tea. May enhance the effects of sedative medications. Not recommended during pregnancy as it may stimulate uterine contractions. May interact with blood-thinning medications.",
+    tags: ["Calming", "Nervous System Support", "Sleep Support"]
+  },
+  // ── GARLIC ──
+  {
+    name: "Garlic",
+    latin: "Allium sativum",
+    category: "Vegetable / Bulb",
+    origin: "Central Asia — used medicinally and culinarily in virtually every culture worldwide for at least 5,000 years",
+    conditions: ["immunity", "inflammation", "digestion", "digestive issues", "cardiovascular", "energy"],
+    description: "One of the most ancient and universal healing foods in human history. Valued across nearly every traditional medical system for supporting immune health and overall vitality.",
+    preparation: ["Crushed or chopped and allowed to sit for 10 minutes before cooking (this activates allicin)", "Roasted whole for a milder flavor", "Raw in dressings, sauces, and traditional preparations", "Traditionally prepared as honey-fermented garlic"],
+    serving: "Traditionally consumed freely as a culinary food. Some traditional preparations used 1–2 raw cloves daily. This is historical context only.",
+    compounds: "Allicin (formed when crushed), alliin, diallyl disulfide, S-allylcysteine, selenium, manganese, vitamin B6, vitamin C",
+    traditional: "Garlic was given to Egyptian pyramid builders for stamina. It was used in Traditional Chinese Medicine, Ayurveda, ancient Greek medicine (Hippocrates recommended it), and virtually every world herbal tradition. It appears in one of the oldest known medical texts, the Ebers Papyrus (c. 1550 BCE).",
+    modern: "Allicin and other organosulfur compounds have been extensively studied for antimicrobial and antioxidant properties. Research has explored garlic's role in cardiovascular health markers, though findings are mixed and dosage-dependent.",
+    safety: "Generally very safe as a food. May cause digestive discomfort in some individuals, particularly raw garlic. May interact with blood-thinning medications. High amounts may increase bleeding risk before surgery — inform your healthcare provider.",
+    tags: ["Immune Support", "Anti-inflammatory", "Antimicrobial", "Cardiovascular Support"]
+  },
+  // ── DANDELION ──
+  {
+    name: "Dandelion",
+    latin: "Taraxacum officinale",
+    category: "Herb / Vegetable",
+    origin: "Eurasia — used in European, Chinese, and Native American herbal traditions",
+    conditions: ["digestion", "digestive issues", "liver support", "skin", "inflammation", "hormonal"],
+    description: "Far from a mere weed, dandelion has a rich history as a food and traditional botanical across many cultures. Both the leaves and roots have distinct traditional uses — leaves as a nutritious green, roots for digestive and liver support.",
+    preparation: ["Young leaves eaten raw in salads or sautéed", "Roasted dandelion root brewed as a coffee alternative", "Root decoction — simmered for 15–20 minutes", "Leaf tea steeped for 5–10 minutes"],
+    serving: "Leaves consumed as a food (salad green). Root tea traditionally consumed 1–2 cups daily. This is historical context only.",
+    compounds: "Inulin (prebiotic fiber, in roots), sesquiterpene lactones (taraxacin — the bitter compounds), potassium, iron, calcium, vitamins A, C, K, beta-carotene",
+    traditional: "Dandelion appears in traditional European, Chinese (Pu Gong Ying), and Arabian herbal traditions. In European folk medicine, it was considered a spring tonic and was widely used to support digestion and liver function. Many traditional cultures consumed it as a nutritious wild green.",
+    modern: "Dandelion root contains inulin, a prebiotic fiber that may support gut bacteria. The bitter compounds may stimulate digestive secretions. Dandelion greens are genuinely nutrient-dense. Scientific research into dandelion's traditional uses is limited but ongoing.",
+    safety: "Generally well-tolerated. Those allergic to Asteraceae/Compositae family plants (ragweed, daisies) may react. May interact with diuretics, lithium, and certain diabetes medications. Avoid harvesting from areas treated with pesticides or herbicides.",
+    tags: ["Digestive Support", "Liver Support", "Mineral-Rich", "Prebiotic"]
+  },
+  // ── TART CHERRY ──
+  {
+    name: "Tart Cherry",
+    latin: "Prunus cerasus",
+    category: "Fruit",
+    origin: "Europe, Western Asia — cultivated in traditional European orchards for centuries",
+    conditions: ["sleep", "insomnia", "inflammation", "joint pain", "energy", "mood"],
+    description: "Tart (sour) cherries are a traditional European fruit valued for their rich anthocyanin content and natural melatonin. Historically consumed as a food and juice.",
+    preparation: ["Consumed as whole fruit (fresh or frozen)", "Tart cherry juice (unsweetened)", "Dried tart cherries added to porridge or trail mix"],
+    serving: "Traditionally consumed as a seasonal fruit. Modern preparations include tart cherry juice. This is historical context only.",
+    compounds: "Anthocyanins (cyanidin-3-glucosylrutinoside), melatonin, quercetin, vitamin C, potassium",
+    traditional: "Cherries have been cultivated in Europe for centuries and were a valued seasonal fruit. Traditional uses were primarily culinary, with cherries preserved as jams, juices, and dried preparations for year-round consumption.",
+    modern: "Tart cherries are one of the few natural food sources of melatonin. Their anthocyanin content has been studied for antioxidant and anti-inflammatory properties. Some clinical studies have explored tart cherry juice for sleep quality, with mixed but somewhat promising results.",
+    safety: "Generally very safe as a whole food. Tart cherry juice can be high in natural sugars — those monitoring blood sugar should be mindful. May interact with blood-thinning medications due to vitamin K content.",
+    tags: ["Sleep Support", "Anti-inflammatory", "Antioxidant", "Melatonin Source"]
+  },
+  // ── LION'S MANE MUSHROOM ──
+  {
+    name: "Lion's Mane Mushroom",
+    latin: "Hericium erinaceus",
+    category: "Mushroom / Fungus",
+    origin: "East Asia, North America, Europe — used in Traditional Chinese Medicine and Japanese culinary tradition",
+    conditions: ["brain fog", "mood", "nervous system", "energy", "fatigue", "anxiety", "digestion"],
+    description: "A distinctive cascading white mushroom valued in East Asian traditions for supporting cognitive function and nervous system health. Also prized as a culinary mushroom for its delicate, seafood-like flavor.",
+    preparation: ["Sautéed as a culinary mushroom (has a lobster-like texture)", "Dried and powdered, then added to hot water, tea, or coffee", "Traditionally prepared in soups and medicinal broths"],
+    serving: "Consumed as a culinary mushroom or as dried powder in traditional preparations. This is historical context only.",
+    compounds: "Hericenones (in fruiting body), erinacines (in mycelium), beta-glucans, polysaccharides",
+    traditional: "Lion's mane has been used in Traditional Chinese Medicine (where it is known as Hou Tou Gu) and Japanese medicine. In China, it was traditionally associated with supporting the five internal organs and was considered beneficial for overall vitality and cognitive health.",
+    modern: "Hericenones and erinacines have been studied in laboratory settings for their potential to stimulate nerve growth factor (NGF) synthesis. Clinical research in humans is still limited, and most findings are preliminary. More research is needed.",
+    safety: "Generally well-tolerated as a food and in traditional preparations. Those with mushroom allergies should avoid. May interact with blood-thinning medications. Limited safety data for pregnancy and nursing — consult a healthcare provider.",
+    tags: ["Brain Support", "Nervous System Support", "Cognitive Support", "Immune Support"]
+  },
+  // ── CINNAMON ──
+  {
+    name: "Cinnamon (Ceylon)",
+    latin: "Cinnamomum verum",
+    category: "Spice / Bark",
+    origin: "Sri Lanka, South and Southeast Asia — used in Ayurveda, Traditional Chinese Medicine, and Middle Eastern traditions for thousands of years",
+    conditions: ["blood sugar", "digestion", "digestive issues", "inflammation", "energy", "fatigue", "immunity"],
+    description: "One of the oldest and most valuable spices in human history, cinnamon has been used as both a culinary spice and a traditional medicine across Asian, Middle Eastern, and European traditions.",
+    preparation: ["Ground or stick cinnamon added to warm beverages, porridge, and baked goods", "Cinnamon stick steeped in hot water as tea", "Added to golden milk, chai, and warming spice blends"],
+    serving: "Traditionally used as a culinary spice in food and beverage preparation. Small amounts (¼–½ teaspoon) in daily cooking. Ceylon cinnamon is preferred over cassia for regular use. This is historical context only.",
+    compounds: "Cinnamaldehyde, eugenol, cinnamic acid, proanthocyanidins, manganese, calcium",
+    traditional: "Cinnamon was one of the most prized spices in the ancient world — mentioned in ancient Chinese texts, the Bible, and Egyptian records. In Ayurveda and TCM, it is considered a warming spice that supports digestion and circulation.",
+    modern: "Cinnamaldehyde has been studied for antimicrobial and antioxidant properties. Some research has explored cinnamon's effects on blood sugar markers, with mixed results. Ceylon cinnamon contains much less coumarin than cassia cinnamon.",
+    safety: "Ceylon cinnamon is generally safe in culinary amounts. Cassia cinnamon contains significant coumarin, which may be harmful to the liver in large amounts — Ceylon is preferred for regular use. May interact with diabetes medications. High doses may cause mouth sores in sensitive individuals.",
+    tags: ["Warming", "Digestive Support", "Blood Sugar Support", "Anti-inflammatory"]
+  },
+  // ── NETTLE ──
+  {
+    name: "Stinging Nettle",
+    latin: "Urtica dioica",
+    category: "Herb / Wild Green",
+    origin: "Europe, Asia, North America — used across European, Native American, and Asian herbal traditions",
+    conditions: ["fatigue", "energy", "inflammation", "hormonal", "hormonal imbalance", "immunity", "skin", "allergies"],
+    description: "A deeply nourishing wild plant used as both food and medicine for centuries. Despite its sting when fresh, cooked nettle is a traditional nutritive green rich in minerals and historically valued as a spring tonic.",
+    preparation: ["Cooked as a green (the sting is neutralized by cooking or drying)", "Dried leaf tea — a long infusion (steeped 4+ hours) is traditional for maximum mineral extraction", "Added to soups, pestos, and savory dishes"],
+    serving: "Traditionally consumed as both food and tea. Long-infused nettle tea (a handful of dried leaf steeped overnight) is a tradition in Western herbalism. This is historical context only.",
+    compounds: "Iron, calcium, magnesium, silica, vitamin K, vitamin C, chlorophyll, formic acid (in fresh stinging hairs)",
+    traditional: "Nettle has been used in European folk medicine for centuries as a spring tonic and nutritive herb. In many European traditions, it was the first wild green gathered in spring. Native American peoples also have traditions of nettle use. It appears widely in European herbals.",
+    modern: "Nettle is genuinely rich in minerals including iron, calcium, and magnesium. Some research has explored nettle for seasonal allergies and other uses, but clinical evidence remains limited for most traditional claims.",
+    safety: "Very well-tolerated when cooked or dried (which neutralizes the sting). Fresh nettle causes a stinging rash on contact — always wear gloves when harvesting. May interact with blood-thinning medications, diabetes drugs, and blood pressure medications. May have diuretic effects. Consult a provider if taking medications.",
+    tags: ["Mineral-Rich", "Nutrient-Dense", "Anti-inflammatory", "Spring Tonic"]
+  }
+];
+
+/* ===== CONDITION ALIASES / MAPPINGS ===== */
+const conditionAliases = {
+  "depression": ["mood", "fatigue", "energy", "brain fog", "nervous system"],
+  "anxiety": ["anxiety", "stress", "nervous system"],
+  "stress": ["stress", "anxiety", "nervous system", "fatigue"],
+  "insomnia": ["insomnia", "sleep"],
+  "sleep": ["sleep", "insomnia"],
+  "fatigue": ["fatigue", "energy"],
+  "low energy": ["energy", "fatigue"],
+  "brain fog": ["brain fog", "mood", "energy"],
+  "inflammation": ["inflammation", "joint pain"],
+  "joint pain": ["joint pain", "inflammation"],
+  "digestive issues": ["digestion", "digestive issues", "gut health"],
+  "digestion": ["digestion", "digestive issues", "gut health"],
+  "gut health": ["gut health", "digestion", "digestive issues"],
+  "bloating": ["digestion", "digestive issues", "gut health"],
+  "nausea": ["nausea", "digestion", "digestive issues"],
+  "immunity": ["immunity"],
+  "low immunity": ["immunity"],
+  "immune support": ["immunity"],
+  "cold": ["immunity", "cold", "flu"],
+  "flu": ["immunity", "cold", "flu"],
+  "hormonal imbalance": ["hormonal", "hormonal imbalance"],
+  "hormonal": ["hormonal", "hormonal imbalance"],
+  "pms": ["hormonal", "hormonal imbalance"],
+  "menopause": ["hormonal", "hormonal imbalance"],
+  "skin": ["skin", "inflammation"],
+  "acne": ["skin", "inflammation", "gut health"],
+  "eczema": ["skin", "inflammation", "gut health"],
+  "headache": ["headache", "stress", "nervous system"],
+  "migraine": ["headache", "inflammation", "nervous system"],
+  "thyroid": ["thyroid", "hormonal", "hormonal imbalance"],
+  "blood sugar": ["blood sugar", "energy"],
+  "liver support": ["liver support", "digestion"],
+  "nervous system": ["nervous system", "anxiety", "stress"],
+  "mood": ["mood", "brain fog", "nervous system"],
+  "allergies": ["allergies", "immunity", "inflammation"],
+  "cardiovascular": ["cardiovascular", "inflammation"]
+};
+
+const filterChips = [
+  {label:"Mood & Calm", terms:["anxiety","stress","mood","nervous system"]},
+  {label:"Digestion", terms:["digestion","digestive issues","gut health"]},
+  {label:"Sleep", terms:["sleep","insomnia"]},
+  {label:"Immunity", terms:["immunity"]},
+  {label:"Inflammation", terms:["inflammation","joint pain"]},
+  {label:"Energy", terms:["energy","fatigue"]},
+  {label:"Hormonal", terms:["hormonal","hormonal imbalance"]},
+  {label:"Brain & Focus", terms:["brain fog","mood"]},
+  {label:"Skin", terms:["skin"]}
+];
+
+const categoryCards = [
+  {icon:"🌿", name:"Stress & Anxiety", search:"anxiety"},
+  {icon:"🌙", name:"Sleep Support", search:"insomnia"},
+  {icon:"🔥", name:"Inflammation", search:"inflammation"},
+  {icon:"⚡", name:"Energy & Fatigue", search:"fatigue"},
+  {icon:"🍃", name:"Digestive Health", search:"digestion"},
+  {icon:"🛡️", name:"Immune Support", search:"immunity"},
+  {icon:"🧠", name:"Brain Fog & Focus", search:"brain fog"},
+  {icon:"🌸", name:"Hormonal Balance", search:"hormonal imbalance"},
+  {icon:"✨", name:"Skin Health", search:"skin"},
+  {icon:"😌", name:"Mood Support", search:"mood"}
+];
+
+/* ===== STATE ===== */
+let favorites = [];
+let showingFavorites = false;
+let currentTheme = 'light';
+
+/* ===== INIT ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  loadFavorites();
+  loadTheme();
+  renderChips();
+  renderCategories();
+  loadLastSearch();
+
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if(e.key === 'Enter') performSearch();
+  });
+
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backTop');
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+});
+
+/* ===== SEARCH ===== */
+function performSearch(query) {
+  query = query || document.getElementById('searchInput').value.trim();
+  if(!query) return;
+
+  document.getElementById('searchInput').value = query;
+  showingFavorites = false;
+  document.getElementById('favoritesSection').classList.remove('visible');
+
+  const lq = query.toLowerCase();
+  const searchTerms = conditionAliases[lq] || [lq];
+
+  let results = remedyDB.filter(r =>
+    r.conditions.some(c => searchTerms.some(st =>
+      c.includes(st) || st.includes(c)
+    ))
+  );
+
+  // Partial matching fallback
+  if(results.length === 0) {
+    results = remedyDB.filter(r =>
+      r.conditions.some(c => c.includes(lq) || lq.includes(c)) ||
+      r.name.toLowerCase().includes(lq) ||
+      r.tags.some(t => t.toLowerCase().includes(lq)) ||
+      r.description.toLowerCase().includes(lq)
+    );
+  }
+
+  try { localStorage.setItem('terraLastSearch', query); } catch(e){}
+
+  renderResults(results, query);
+}
+
+function renderResults(results, query) {
+  const section = document.getElementById('resultsSection');
+  const grid = document.getElementById('resultsGrid');
+  const condSpan = document.getElementById('resultCondition');
+  const countSpan = document.getElementById('resultCount');
+
+  condSpan.textContent = query;
+  section.style.display = 'block';
+  document.getElementById('browseSection').style.display = results.length ? 'none' : 'block';
+
+  if(results.length === 0) {
+    grid.innerHTML = `
+      <div class="no-results" style="grid-column:1/-1">
+        <div class="no-results-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" width="64" height="64"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+        </div>
+        <h3>No traditional supports found</h3>
+        <p>Try a different term — for example: anxiety, insomnia, inflammation, fatigue, digestion, immunity, brain fog, or skin.</p>
+      </div>`;
+    countSpan.textContent = '';
+    return;
+  }
+
+  countSpan.textContent = `${results.length} traditional support${results.length !== 1 ? 's' : ''}`;
+  grid.innerHTML = results.map((r, i) => renderCard(r, i)).join('');
+  section.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function renderCard(r, index) {
+  const isFav = favorites.includes(r.name);
+  const delay = index * 0.08;
+  const latinLine = r.latin ? `<div class="card-latin">${r.latin}</div>` : '';
+
+  return `
+  <article class="remedy-card" style="animation-delay:${delay}s" aria-label="Remedy: ${r.name}">
+    <div class="card-top">
+      <span class="card-category">${r.category}</span>
+      <button class="fav-btn ${isFav?'active':''}" onclick="toggleFavorite('${r.name.replace(/'/g,"\\'")}')" aria-label="${isFav?'Remove from':'Save to'} favorites" title="${isFav?'Remove from':'Save to'} favorites">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="${isFav?'currentColor':'none'}" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+      </button>
+    </div>
+    <h3 class="card-name">${r.name}</h3>
+    ${latinLine}
+    <div class="card-origin">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+      ${r.origin}
+    </div>
+    <p class="card-desc">${r.description}</p>
+    <div class="card-tags">
+      ${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+    </div>
+    <button class="expand-btn" onclick="toggleDetails(this)" aria-expanded="false">
+      Learn More
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+    </button>
+    <div class="card-details">
+      <div class="details-inner">
+        <div class="detail-block">
+          <div class="detail-label">Preparation Methods</div>
+          <div class="detail-text"><ul>${r.preparation.map(p => `<li>${p}</li>`).join('')}</ul></div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Traditional Serving Guidance</div>
+          <div class="detail-text">${r.serving}</div>
+        </div>
+        ${r.compounds ? `<div class="detail-block">
+          <div class="detail-label">Key Compounds</div>
+          <div class="detail-text">${r.compounds}</div>
+        </div>` : ''}
+        <div class="detail-block">
+          <div class="detail-label">Traditional Understanding</div>
+          <div class="detail-text">${r.traditional}</div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Modern Nutritional Context</div>
+          <div class="detail-text">${r.modern}</div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">Safety Considerations</div>
+          <div class="safety-block"><div class="detail-text">${r.safety}</div></div>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+
+/* ===== EXPANDABLE DETAILS ===== */
+function toggleDetails(btn) {
+  const details = btn.nextElementSibling;
+  const isOpen = details.classList.contains('open');
+  details.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.setAttribute('aria-expanded', !isOpen);
+  btn.innerHTML = (isOpen ? 'Learn More' : 'Show Less') +
+    ' <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>';
+}
+
+/* ===== CHIPS ===== */
+function renderChips() {
+  const c = document.getElementById('chipContainer');
+  c.innerHTML = filterChips.map(f =>
+    `<button class="chip" onclick="chipSearch(this,'${f.terms[0]}')" aria-label="Filter by ${f.label}">${f.label}</button>`
+  ).join('');
+}
+function chipSearch(el, term) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('searchInput').value = term;
+  performSearch(term);
+}
+
+/* ===== CATEGORIES ===== */
+function renderCategories() {
+  const grid = document.getElementById('categoryGrid');
+  grid.innerHTML = categoryCards.map(c => {
+    const count = new Set(remedyDB.filter(r =>
+      r.conditions.some(con => con.includes(c.search) || c.search.includes(con))
+    ).map(r => r.name)).size;
+    return `
+    <div class="cat-card" onclick="performSearch('${c.search}')" role="button" tabindex="0" aria-label="Browse ${c.name}">
+      <div class="cat-card-icon">${c.icon}</div>
+      <div class="cat-card-name">${c.name}</div>
+      <div class="cat-card-count">${count} support${count!==1?'s':''}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ===== FAVORITES ===== */
+function loadFavorites() {
+  try { favorites = JSON.parse(localStorage.getItem('terraFavorites') || '[]'); } catch(e){ favorites = []; }
+}
+function saveFavorites() {
+  try { localStorage.setItem('terraFavorites', JSON.stringify(favorites)); } catch(e){}
+}
+function toggleFavorite(name) {
+  const idx = favorites.indexOf(name);
+  if(idx > -1) favorites.splice(idx, 1);
+  else favorites.push(name);
+  saveFavorites();
+  // Re-render current view
+  if(showingFavorites) renderFavoritesView();
+  else {
+    const query = document.getElementById('searchInput').value.trim();
+    if(query) performSearch(query);
+  }
+}
+function toggleFavoritesView() {
+  showingFavorites = !showingFavorites;
+  if(showingFavorites) renderFavoritesView();
+  else {
+    document.getElementById('favoritesSection').classList.remove('visible');
+    document.getElementById('resultsSection').style.display = 'none';
+    document.getElementById('browseSection').style.display = 'block';
+  }
+}
+function renderFavoritesView() {
+  const section = document.getElementById('favoritesSection');
+  const grid = document.getElementById('favGrid');
+  const count = document.getElementById('favCount');
+
+  document.getElementById('resultsSection').style.display = 'none';
+  document.getElementById('browseSection').style.display = 'none';
+
+  const favRemedies = remedyDB.filter(r => favorites.includes(r.name));
+  if(favRemedies.length === 0) {
+    grid.innerHTML = `
+      <div class="no-results" style="grid-column:1/-1">
+        <h3>No saved remedies yet</h3>
+        <p>Search for a condition and tap the heart icon to save remedies here.</p>
+      </div>`;
+    count.textContent = '';
+  } else {
+    count.textContent = `${favRemedies.length} saved`;
+    grid.innerHTML = favRemedies.map((r,i) => renderCard(r,i)).join('');
+  }
+  section.classList.add('visible');
+  section.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ===== THEME ===== */
+function loadTheme() {
+  try { currentTheme = localStorage.getItem('terraTheme') || 'light'; } catch(e){}
+  if(currentTheme === 'dark') document.documentElement.setAttribute('data-theme','dark');
+}
+function toggleTheme() {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme === 'dark' ? 'dark' : '');
+  try { localStorage.setItem('terraTheme', currentTheme); } catch(e){}
+}
+
+/* ===== LAST SEARCH ===== */
+function loadLastSearch() {
+  try {
+    const last = localStorage.getItem('terraLastSearch');
+    if(last) document.getElementById('searchInput').value = last;
+  } catch(e){}
+}
+
+/* ===== RESET ===== */
+function resetApp() {
+  showingFavorites = false;
+  document.getElementById('searchInput').value = '';
+  document.getElementById('resultsSection').style.display = 'none';
+  document.getElementById('favoritesSection').classList.remove('visible');
+  document.getElementById('browseSection').style.display = 'block';
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+</body>
+</html>
